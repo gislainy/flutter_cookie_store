@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cookie_store/cookie_detail.dart';
 
 class CookiePage extends StatelessWidget {
   @override
@@ -45,7 +46,14 @@ class CookiePage extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => CookieDetail(
+                      assetPath: imgPath,
+                      cookiename: name,
+                      cookieprice: price,
+                    )));
+          },
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
